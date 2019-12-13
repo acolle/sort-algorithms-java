@@ -14,7 +14,7 @@ public class Main {
     }
 
     public static void radixSort(String[] input, int radix, int width) {
-        for (int i = 0; i < width; i++) {
+        for (int i = width - 1; i >= 0; i--) {
             radixSingleSort(input, i, radix);
         }
     }
@@ -49,10 +49,6 @@ public class Main {
         Character c = value.charAt(position);
         int index = (char)(c - 'a');
         return index;
-    }
-
-    private static String getCharForIndex(int index) {
-        return index > 0 && index < 27 ? String.valueOf((char)(index + 'a' - 1)) : null;
     }
 
 }
